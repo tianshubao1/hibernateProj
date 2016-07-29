@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2015 4:03:09 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Player" table="PLAYER">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
+        <many-to-one name="team" class="Team" access="field" fetch="join">
+            <column name="TEAM_FK" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
